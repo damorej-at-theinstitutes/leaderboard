@@ -1,3 +1,7 @@
+# Distribution files
+app/
+dist/
+
 # Text editor files
 *.sublime-workspace
 
