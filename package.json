@@ -1,0 +1,13 @@
+{
+  "name": "leaderboard",
+  "version": "0.1.0",
+  "description": "Interactive leader board",
+  "main": "src/main/main.js",
+  "repository": "https://github.com/damorej-at-theinstitutes/leaderboard.git",
+  "author": "AICPCU\\damorej <damorej@theinstitutes.org>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "electron": "^6.0.9"
+  }
+}
