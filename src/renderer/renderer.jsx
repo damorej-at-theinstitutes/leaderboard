@@ -1,9 +1,9 @@
-const style = require('./style/style.scss');
+const style = require('./scss/style.scss');
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import App from './components/app.jsx';
+import App from './js/components/app.jsx';
 
 ReactDOM.render(
   <App />,

@@ -11,8 +11,6 @@ export const UPDATE_ENTRY = 'UPDATE_ENTRY';
  * Action creators.
  */
 export function addEntry(name, time) {
-  console.log(name);
-  console.log(time);
   return {
     type: ADD_ENTRY,
     name: name,

@@ -1,13 +1,14 @@
 import * as React from 'react';
-import Stopwatch from '../leaderboard/stopwatch';
+import Stopwatch from '../stopwatch';
 
 import { connect } from 'react-redux';
-import { addEntry } from '../leaderboard/actions';
+import { addEntry } from '../redux/actions';
 
 const TimerButton = (props) => {
   /*
    * Component state.
    */
+  const [racer, setRacer] = React.useState('');
   const [active, setActive] = React.useState(false);
   const [time, setTime] = React.useState(0);
   const [stopwatch, setStopwatch] = React.useState(null);
@@ -48,6 +49,10 @@ const TimerButton = (props) => {
     setActive(false);
   }
 
+  function updateRacer(event) {
+    setRacer(event.target.value);
+  }
+
   /*
    * Activates stopwatch if inactive, or stops it if active.
    */
@@ -55,8 +60,7 @@ const TimerButton = (props) => {
     if (active) {
       props.onStop && props.onStop(time);
       stopwatch.stop();
-      console.log(props);
-      console.log(props.conAddEntry("Jon", 500));
+      props.addEntry(racer, time);
     }
     else {
       props.onStart && props.onStart();
@@ -93,6 +97,9 @@ const TimerButton = (props) => {
    * Component rendering.
    */
   return <div className="stopwatch-button">
+      <div className="stopwatch-button__name">
+        <input type="text" placeholder="Name" value={racer} onChange={updateRacer} />
+      </div>
       <div className="stopwatch-button__display">
         {formatTime(time)}
       </div>
@@ -109,7 +116,7 @@ const TimerButton = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    conAddEntry: () => dispatch(addEntry()),
+    addEntry: (name, time) => dispatch(addEntry(name, time)),
   };
 };
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import LeaderboardEntryForm from './leaderboardEntryForm';
+import LeaderboardEntryList from './leaderboard/entryList';
 
 const Layout = () => {
   return <div className="layout">
@@ -8,7 +9,7 @@ const Layout = () => {
       <LeaderboardEntryForm />
     </div>
     <div className="layout__right">
-
+      <LeaderboardEntryList />
     </div>
   </div>;
 };

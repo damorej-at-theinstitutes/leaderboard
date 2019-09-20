@@ -13,6 +13,6 @@ const unsubscribe = store.subscribe(() => console.log(store.getState()));
 store.dispatch(addEntry('Joe DAmore', 32432));
 store.dispatch(addEntry('Jeff Soandso', 43243));
 
-unsubscribe();
+//unsubscribe();
 
 export default store;

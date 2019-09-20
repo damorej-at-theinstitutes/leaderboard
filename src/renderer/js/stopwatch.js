@@ -6,6 +6,9 @@ const Stopwatch = () => {
 
     intervalId: null,
 
+    /**
+     * Starts the stopwatch.
+     */
     start: function(interval, callback) {
       this.startDate = Date.now();
       let id = setInterval(() => {
@@ -16,6 +19,9 @@ const Stopwatch = () => {
       this.intervalId = id;
     },
 
+    /**
+     * Stops the stopwatch.
+     */
     stop: function() {
       this.intervalId && clearInterval(this.intervalId);
     }

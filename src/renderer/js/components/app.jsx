@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import store from '../leaderboard/store';
+import store from '../redux/store';
 
 import Layout from './layout';
 
