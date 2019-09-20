@@ -4,9 +4,9 @@ const path = require('path');
 const [mainConfigBase, rendererConfigBase] = require('./webpack.default.js');
 
 let mainConfig = mainConfigBase;
-mainConfig.mode = 'development';
+mainConfig.mode = 'production';
 
 let rendererConfig = rendererConfigBase;
-rendererConfig.mode = 'development';
+rendererConfig.mode = 'production';
 
 module.exports = [mainConfig, rendererConfig];
