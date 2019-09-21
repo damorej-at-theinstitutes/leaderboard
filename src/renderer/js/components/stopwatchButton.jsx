@@ -4,6 +4,8 @@ import Stopwatch from '../stopwatch';
 import { connect } from 'react-redux';
 import { addEntry } from '../redux/actions';
 
+import formatTime from '../timeFormatter';
+
 const TimerButton = (props) => {
   /*
    * Component state.
@@ -71,28 +73,6 @@ const TimerButton = (props) => {
     setActive(!active);
   }
 
-  /**
-   * Format elapsed milliseconds into seconds.
-   */
-  function formatTime() {
-    const secondsDigits = 3;
-
-    const seconds = Math.floor(time / 1000);
-    const points = Math.floor((time % 1000) / 10);
-
-    let secondsPad = '';
-    let pointsPad = '';
-
-    if (seconds.toString().length < secondsDigits) {
-      secondsPad = '0'.repeat(secondsDigits - seconds.toString().length);
-    }
-    if (points.toString().length < 2) {
-      pointsPad = '0';
-    }
-
-    return `${secondsPad}${seconds}:${pointsPad}${points}`;
-  }
-
   /*
    * Component rendering.
    */
@@ -101,7 +81,7 @@ const TimerButton = (props) => {
         <input type="text" placeholder="Name" value={racer} onChange={updateRacer} />
       </div>
       <div className="stopwatch-button__display">
-        {formatTime(time)}
+        {formatTime(time, 3)}
       </div>
       <div className="stopwatch-button__controls">
         <div className="stopwatch-button__controls__main">
