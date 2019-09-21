@@ -63,6 +63,7 @@ const TimerButton = (props) => {
       props.onStop && props.onStop(time);
       stopwatch.stop();
       props.addEntry(racer, time);
+      setRacer('');
     }
     else {
       props.onStart && props.onStart();
