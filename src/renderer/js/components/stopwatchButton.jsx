@@ -66,6 +66,11 @@ const TimerButton = (props) => {
       setRacer('');
     }
     else {
+      if (!racer) {
+        // TODO Show error to user.
+        console.log("No racer name specified");
+        return;
+      }
       props.onStart && props.onStart();
       stopwatch.start(10, (elapsed) => {
         setTime(elapsed);
