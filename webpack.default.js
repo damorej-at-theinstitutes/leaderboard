@@ -64,6 +64,14 @@ let rendererConfig = {
           'sass-loader?sourceMap',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
