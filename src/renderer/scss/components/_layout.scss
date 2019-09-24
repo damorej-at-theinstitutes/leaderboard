@@ -30,11 +30,11 @@
 
     &__squares {
       width: 299px;
-      height: 69px;
+      height: 71px;
       background-image: url('../images/ui/banner-top-squares.png');
       position: absolute;
-      right: 1px;
-      top: 1px;
+      right: 0;
+      top: 0;
       opacity: .55;
     }
   }
@@ -47,11 +47,11 @@
 
     &__squares {
       width: 299px;
-      height: 69px;
+      height: 71px;
       background-image: url('../images/ui/banner-bottom-squares.png');
       position: absolute;
-      right: 1px;
-      bottom: 1px;
+      right: 0;
+      bottom: 0;
       opacity: .8;
     }
   }
