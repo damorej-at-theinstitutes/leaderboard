@@ -65,6 +65,12 @@ let rendererConfig = {
         ],
       },
       {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: {
+          loader: 'file-loader',
+        },
+      },
+      {
         test: /\.(png|jpe?g|gif)$/,
         use: [
           {
