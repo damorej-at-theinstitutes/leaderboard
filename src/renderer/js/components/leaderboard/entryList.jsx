@@ -13,7 +13,7 @@ const LeaderboardEntryList = (props) => {
     if (entryB.time < entryA.time) {
       return 1;
     }
-    return 0;fdsfdsafdsaf
+    return 0;
   }
 
   function renderEntry(entry, index) {
