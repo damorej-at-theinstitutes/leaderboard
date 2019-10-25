@@ -22,8 +22,11 @@ const LeaderboardEntryList = (props) => {
 
   return <div className="entry-list">
     <div className="entry-list__participants-container">
-      <div className="entry-list__participants-container__participants">
-      { props.entries.sort(sortEntries).map(renderEntry) }
+      <div className="entry-list__participants-container__participants entry-container">
+          { props.entries
+            .sort(sortEntries)
+            .slice(0, 10)
+            .map(renderEntry)}
       </div>
     </div>
   </div>
