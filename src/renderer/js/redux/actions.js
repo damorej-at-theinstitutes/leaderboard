@@ -10,11 +10,12 @@ export const UPDATE_ENTRY = 'UPDATE_ENTRY';
 /*
  * Action creators.
  */
-export function addEntry(name, time) {
+export function addEntry(name, time, racer = 0) {
   return {
     type: ADD_ENTRY,
     name: name,
     time: time,
+    racer: racer,
     uuid: Uuid(),
   };
 }
@@ -26,12 +27,13 @@ export function deleteEntry(uuid) {
   };
 }
 
-export function updateEntry(uuid, name, time) {
+export function updateEntry(uuid, name, time, racer) {
   return {
     type: UPDATE_ENTRY,
     uuid,
     name,
-    time
+    time,
+    racer
   };
 }
 

@@ -1,0 +1,15 @@
+.panel-container {
+  padding: 36px 36px 42px 36px;
+}
+
+.panel {
+  background-image: url('../images/ui/banner-bg.png');
+  border: 9px solid #9193f7;
+  background-repeat: repeat;
+  border-radius: 24px;
+  color: #000000;
+
+  &--padded {
+    padding: 24px;
+  }
+}

@@ -17,11 +17,11 @@ const LeaderboardEntryList = (props) => {
   }
 
   function renderEntry(entry, index) {
-    return <Entry name={entry.name} rank={index + 1} time={entry.time} key={index} />;
+    return <Entry name={entry.name} racer={entry.racer} rank={index + 1} time={entry.time} key={index} />;
   }
 
-  return <div className="entry-list">
-    <div className="entry-list__participants-container">
+  return <div className="entry-list panel-container">
+    <div className="entry-list__participants-container panel">
       <div className="entry-list__participants-container__participants entry-container">
           { props.entries
             .sort(sortEntries)

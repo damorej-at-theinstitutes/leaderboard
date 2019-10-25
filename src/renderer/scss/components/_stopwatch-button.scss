@@ -1,6 +1,51 @@
 .stopwatch-button {
+
+  &__racer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__name {
+      flex-grow: 1;
+      border: 4px solid #9193f7;
+      border-radius: 12px;
+      width: 0;
+      text-align: center;
+      font-size: 16pt;
+      font-weight: bold;
+      font-family: $stack-ui;
+    }
+  }
+
   &__display {
     font-family: $stack-digital;
     font-size: 36pt;
+  }
+
+  &__controls {
+    &__main {
+      &__button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        border: 0;
+        font-family: $stack-ui;
+        font-size: 24pt;
+
+        &--go {
+          color: #ffffff;
+          background-color: green;
+        }
+
+        &--cancel {
+          color: #ffffff;
+          background-color: red;
+        }
+      }
+    }
   }
 }

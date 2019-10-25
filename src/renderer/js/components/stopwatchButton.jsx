@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Stopwatch from '../stopwatch';
 
+import RacerChooser from './racerChooser';
+
 import { connect } from 'react-redux';
 import { addEntry } from '../redux/actions';
 
@@ -10,7 +12,8 @@ const TimerButton = (props) => {
   /*
    * Component state.
    */
-  const [racer, setRacer] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [racer, setRacer] = React.useState(0);
   const [active, setActive] = React.useState(false);
   const [time, setTime] = React.useState(0);
   const [stopwatch, setStopwatch] = React.useState(null);
@@ -25,9 +28,14 @@ const TimerButton = (props) => {
   /*
    * Timer button label.
    */
-  let timerLabel = "Start Timer";
+  let timerLabel = "Go";
   if (active === true) {
-    timerLabel = "Stop Timer";
+    timerLabel = "Stop";
+  }
+
+  let timerClass = "stopwatch-button__controls__main__button stopwatch-button__controls__main__button--go";
+  if (active === true) {
+    timerClass = "stopwatch-button__controls__main__button stopwatch-button__controls__main__button--cancel";
   }
 
   /*
@@ -51,8 +59,12 @@ const TimerButton = (props) => {
     setActive(false);
   }
 
+  function updateName(event) {
+    setName(event.target.value);
+  }
+
   function updateRacer(event) {
-    setRacer(event.target.value);
+    setRacer(event);
   }
 
   /*
@@ -62,11 +74,11 @@ const TimerButton = (props) => {
     if (active) {
       props.onStop && props.onStop(time);
       stopwatch.stop();
-      props.addEntry(racer, time);
-      setRacer('');
+      props.addEntry(name, time, racer);
+      setName('');
     }
     else {
-      if (!racer) {
+      if (!name) {
         // TODO Show error to user.
         console.log("No racer name specified");
         return;
@@ -83,15 +95,16 @@ const TimerButton = (props) => {
    * Component rendering.
    */
   return <div className="stopwatch-button">
-      <div className="stopwatch-button__name">
-        <input type="text" placeholder="Name" value={racer} onChange={updateRacer} />
+      <div className="stopwatch-button__racer">
+        <RacerChooser onChange={updateRacer} />
+        <input className="stopwatch-button__racer__name" type="text" placeholder="Name" value={name} onChange={updateName} />
       </div>
       <div className="stopwatch-button__display">
         {formatTime(time, 3)}
       </div>
       <div className="stopwatch-button__controls">
         <div className="stopwatch-button__controls__main">
-          <button type="button" onClick={onTimerClick}>
+          <button type="button" onClick={onTimerClick} className={timerClass}>
             {timerLabel}
           </button>
         </div>
@@ -102,7 +115,7 @@ const TimerButton = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addEntry: (name, time) => dispatch(addEntry(name, time)),
+    addEntry: (name, time, racer) => dispatch(addEntry(name, time, racer)),
   };
 };
 

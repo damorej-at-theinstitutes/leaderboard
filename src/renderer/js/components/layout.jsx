@@ -7,7 +7,9 @@ const Layout = () => {
   return <div className="layout">
     <div className="layout__header">
       <div className="layout__header__tab">
-        Header woo hoo
+        <div className="layout__header__tab__content">
+          Mario Kart
+        </div>
       </div>
       <div className="layout__header__squares"></div>
     </div>
@@ -20,6 +22,9 @@ const Layout = () => {
       </div>
     </div>
     <div className="layout__footer">
+      <div className="layout__footer__content">
+        Honorable Mentions:
+      </div>
       <div className="layout__footer__squares"></div>
     </div>
   </div>;

@@ -13,6 +13,7 @@ function leaderboardApp(state = initialState, action) {
           {
             name: action.name,
             time: action.time,
+            racer: action.racer,
             uuid: action.uuid,
           }
         ],
@@ -33,6 +34,7 @@ function leaderboardApp(state = initialState, action) {
           if (entry.uuid === action.uuid) {
             entry.name = action.name;
             entry.time = action.time;
+            entry.racer = action.racer;
           }
           return entry;
         }),

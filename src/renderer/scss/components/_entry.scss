@@ -4,20 +4,34 @@
 
 .entry {
   height: 10%;
-  padding: 12px 24px;
+  max-height: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: $stack-ui;
+  font-size: 14pt;
 
   &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 100%;
+  }
+
+  &__rank {
+    font-weight: bold;
   }
 
   &__icon {
-    width: 64px;
-    height: 64px;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   &__name {

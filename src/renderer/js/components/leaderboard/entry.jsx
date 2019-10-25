@@ -1,6 +1,10 @@
 import * as React from 'react';
 
+import Racers from '../../racers';
+
 const LeaderboardEntry = (props) => {
+
+  console.log(props);
 
   return <div className="entry">
     <div className="entry__content">
@@ -8,7 +12,7 @@ const LeaderboardEntry = (props) => {
         { props.rank }
       </div>
       <div className="entry__icon">
-
+        <img src={Racers[props.racer].icon} />
       </div>
       <div className="entry__name">
         { props.name }

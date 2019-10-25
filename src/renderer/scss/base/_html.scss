@@ -4,8 +4,11 @@ html, body {
   margin: 0;
 }
 
-* {
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 :not(input):not(textarea),
