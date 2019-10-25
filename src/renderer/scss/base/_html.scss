@@ -4,6 +4,10 @@ html, body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 :not(input):not(textarea),
 :not(input):not(textarea)::after,
 :not(input):not(textarea)::before {

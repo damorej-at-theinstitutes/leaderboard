@@ -21,7 +21,11 @@ const LeaderboardEntryList = (props) => {
   }
 
   return <div className="entry-list">
-    { props.entries.sort(sortEntries).map(renderEntry) }
+    <div className="entry-list__participants-container">
+      <div className="entry-list__participants-container__participants">
+      { props.entries.sort(sortEntries).map(renderEntry) }
+      </div>
+    </div>
   </div>
 };
 
