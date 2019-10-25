@@ -16,9 +16,6 @@ const LeaderboardEntry = (props) => {
       <div className="entry__time">
         { props.time }
       </div>
-      <div className="entry__edit">
-
-      </div>
     </div>
   </div>;
 
