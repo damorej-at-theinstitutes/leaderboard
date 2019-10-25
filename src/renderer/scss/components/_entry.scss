@@ -1,0 +1,30 @@
+.entry-container {
+  height: 100%;
+}
+
+.entry {
+  height: 10%;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__time {
+
+  }
+}
