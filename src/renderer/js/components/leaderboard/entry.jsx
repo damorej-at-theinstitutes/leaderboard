@@ -4,6 +4,9 @@ const LeaderboardEntry = (props) => {
 
   return <div className="entry">
     <div className="entry__content">
+      <div className="entry__rank">
+        { props.rank }
+      </div>
       <div className="entry__icon">
 
       </div>

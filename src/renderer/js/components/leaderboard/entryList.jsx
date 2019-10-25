@@ -17,7 +17,7 @@ const LeaderboardEntryList = (props) => {
   }
 
   function renderEntry(entry, index) {
-    return <Entry name={entry.name} time={entry.time} key={index} />;
+    return <Entry name={entry.name} rank={index + 1} time={entry.time} key={index} />;
   }
 
   return <div className="entry-list">
