@@ -16,16 +16,33 @@ const RacerChooser = (props) => {
 
     if (currentRacer + 1 >= maxRacers) {
       setRacer(0);
-      props.onChange(0);
+      if (props.onChange) {
+        props.onChange(0);
+      }
       return;
     }
-    setRacer(racer + 1);
+    setRacer(currentRacer + 1);
     if (props.onChange) {
-      props.onChange(racer + 1);
+      props.onChange(currentRacer + 1);
     }
   }
 
-  return <div className="racer-chooser" onClick={incrementRacer}>
+  function deincrementRacer() {
+    const currentRacer = racer;
+    const maxRacers = Racers.length;
+
+    if (currentRacer == 0) {
+      setRacer(maxRacers - 1);
+      props.onChange(maxRacers - 1);
+      return;
+    }
+    setRacer(currentRacer - 1);
+    if (props.onChange) {
+      props.onChange(currentRacer - 1);
+    }
+  }
+
+  return <div className="racer-chooser" onClick={incrementRacer} onContextMenu={deincrementRacer}>
     <img src={Racers[racer].icon} />
   </div>;
 };
