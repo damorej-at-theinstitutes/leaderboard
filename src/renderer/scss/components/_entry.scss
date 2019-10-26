@@ -10,20 +10,28 @@
   justify-content: center;
   font-family: $stack-ui;
   font-size: 14pt;
+  position: relative;
 
   &__content {
     display: flex;
+    padding: 8px 24px;
     flex-direction: row;
     justify-content: space-between;
     height: 100%;
+    align-items: center;
   }
 
   &__rank {
-    font-weight: bold;
-  }
+    width: 48px;
+    height: 48px;
+    margin-right: 96px;
+    flex-shrink: 0;
 
-  &__icon {
-    height: 100%;
+    // Adjust for larger "10th" rank image.
+    &--10 {
+      width: 60px;
+      margin-right: 36px;
+    }
 
     img {
       max-width: 100%;
@@ -31,14 +39,56 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+      overflow: visible;
+      filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, .8));
+    }
+  }
+
+  &__icon {
+    width: 54px;
+    height: 54px;
+    margin-right: 96px;
+    flex-shrink: 0;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: visible;
     }
   }
 
   &__name {
     font-weight: bold;
+    flex-grow: 1;
+    font-size: 19.5pt;
+    color: #4c4c4c;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 72px;
   }
 
   &__time {
+    font-family: $stack-digital;
+    font-weight: bold;
+    font-size: 28pt;
+    color: #4c4c4c;
+    flex-shrink: 0;
+  }
 
+  &:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: calc(100% - 48px);
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 4px;
+    background-color: #9193f7;
   }
 }
