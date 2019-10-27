@@ -1,0 +1,42 @@
+.stopwatch-display {
+  &__time {
+    transition: opacity .15s ease, color 1s ease-in-out;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-family: $stack-digital;
+    font-size: 155pt;
+    color: #ffffff;
+    opacity: 1;
+    z-index: 1;
+    text-shadow: 0px 12px 0px #000000;
+
+    &__seconds-indicator {
+      font-family: $stack-ui;
+      font-size: 95pt;
+      font-weight: bold;
+    }
+
+    &__points {
+      font-size: 85pt;
+      margin-left: 54px;
+    }
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
