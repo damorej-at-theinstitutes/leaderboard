@@ -1,0 +1,53 @@
+.shiny-button {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 16px 48px;
+  font-family: $stack-ui;
+  font-size: 24pt;
+  font-weight: bold;
+  background-color: rgba(198, 200, 2, .4);
+  cursor: pointer;
+  border-top: 6px solid #a28702;
+  border-bottom: 6px solid #c4c704;
+  outline: 4px solid #000000;
+  border-left: none;
+  border-right: none;
+  color: #ffffff;
+  text-shadow:
+    -3px -3px 0 #534500,
+     0   -3px 0 #534500,
+     3px -3px 0 #534500,
+     3px  0   0 #534500,
+     3px  3px 0 #534500,
+     0    3px 0 #534500,
+    -3px  3px 0 #534500,
+    -3px  0   0 #534500,
+     3px  3px 1px #000000,
+     6px  6px 1px #000000,
+     0px  6px 1px #000000;
+  margin-top: 24px;
+
+  &:hover {
+    background-color: rgba(230, 232, 22, .4);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #080607 0%,#574600 9%,#c7c707 50%,#b39c01 51%,#5d5c00 76%,#0b0b01 100%);
+    position: absolute;
+    display: block;
+    top: 0;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+}
