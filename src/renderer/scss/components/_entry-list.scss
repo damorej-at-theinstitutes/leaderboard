@@ -3,8 +3,19 @@
 
   &__participants-container {
     height: 100%;
+    position: relative;
 
     &__participants {
+      &__none {
+        position: absolute;
+        width: 100%;
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 36pt;
+        font-family: $stack-ui;
+        color: #767676;
+        text-align: center;
+      }
     }
   }
 }

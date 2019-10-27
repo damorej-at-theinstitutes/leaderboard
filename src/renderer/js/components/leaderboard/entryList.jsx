@@ -20,13 +20,22 @@ const LeaderboardEntryList = (props) => {
     return <Entry name={entry.name} racer={entry.racer} rank={index + 1} time={entry.time} key={index} />;
   }
 
+  function renderEntries() {
+    if (props.entries.length > 0) {
+      return props.entries
+        .sort(sortEntries)
+        .slice(0, 10)
+        .map(renderEntry);
+    }
+    return <div className="entry-list__participants-container__participants__none">
+      No entries recorded
+    </div>
+  }
+
   return <div className="entry-list panel-container">
     <div className="entry-list__participants-container panel">
       <div className="entry-list__participants-container__participants entry-container">
-          { props.entries
-            .sort(sortEntries)
-            .slice(0, 10)
-            .map(renderEntry)}
+          { renderEntries() }
       </div>
     </div>
   </div>
