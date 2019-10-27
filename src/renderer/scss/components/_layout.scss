@@ -4,6 +4,7 @@
   display: flex;
   align-items: stretch;
   flex-direction: column;
+  position: relative;
 
   &__header {
     height: 120px;
