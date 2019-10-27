@@ -4,7 +4,7 @@ import StopwatchButton from './stopwatchButton';
 
 const LeaderboardEntryForm = () => {
   return <div className="leaderboard-entry-form panel-container">
-    <div className="leaderboard-entry-form__controls panel panel--padded">
+    <div className="leaderboard-entry-form__controls">
       <StopwatchButton />
     </div>
   </div>;
