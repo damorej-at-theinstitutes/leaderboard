@@ -24,7 +24,7 @@ const Stopwatch = () => {
      */
     stop: function() {
       this.intervalId && clearInterval(this.intervalId);
-    }
+    },
   };
 }
 
