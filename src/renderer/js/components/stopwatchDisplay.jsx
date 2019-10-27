@@ -13,17 +13,27 @@ const StopwatchDisplay = (props) => {
   const [stopwatch, setStopwatch] = React.useState(null);
   const [stopwatchFinished, setStopwatchFinished] = React.useState(false);
   const [time, setTime] = React.useState(0);
+  const [finished, setFinished] = React.useState(false);
 
   /*
    * Create stopwatch object on mount.
    */
   React.useEffect(() => {
-    setTimeout(() => {
+    let id = setTimeout(() => {
       let countdownObject = Countdown();
       countdownObject.start(3, updateCountdown, finishCountdown, 1100);
       setCountdown(countdownObject);
     }, 1600);
+
+    return () => {clearTimeout(id)};
   }, []);
+
+  React.useEffect(() => {
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    }
+  }, [stopwatch]);
 
   function updateCountdown(remaining) {
     setCountdownRemaining(remaining);
@@ -81,11 +91,17 @@ const StopwatchDisplay = (props) => {
   }
 
   function finish() {
-    stopwatch.stop();
-    setStopwatchFinished(true);
-    setTimeout(() => {
-      onClickFinish();
-    }, 5000);
+    if (!stopwatch) {
+      return;
+    }
+    if (!finished) {
+      stopwatch.stop();
+      setStopwatchFinished(true);
+      setTimeout(() => {
+        onClickFinish();
+      }, 5000);
+    }
+    setFinished(true);
   }
 
   function displayTime() {
@@ -112,10 +128,24 @@ const StopwatchDisplay = (props) => {
   }
 
   function displayControls() {
+    if (finished) {
+      return null;
+    }
     return <div className="stopwatch-display__controls">
       <button onClick={finish} className="overlay-button">Finish!</button>
       <button onClick={onClickCancel} className="overlay-button overlay-button--small overlay-button--text">Cancel</button>
     </div>
+  }
+
+  function onKeyDown(event) {
+    if (event.key === 'Escape') {
+      onClickCancel();
+      return;
+    }
+    if (event.key === ' ' || event.key === 'Enter') {
+      finish();
+      return;
+    }
   }
 
   return <div className="stopwatch-display">
