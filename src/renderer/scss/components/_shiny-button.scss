@@ -27,6 +27,7 @@
      6px  6px 1px #000000,
      0px  6px 1px #000000;
   margin-top: 24px;
+  transition: background-color .15s ease-in-out;
 
   &:hover {
     background-color: rgba(230, 232, 22, .4);
