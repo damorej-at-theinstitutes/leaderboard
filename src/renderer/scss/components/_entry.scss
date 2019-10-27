@@ -30,7 +30,7 @@
     // Adjust for larger "10th" rank image.
     &--10 {
       width: 60px;
-      margin-right: 36px;
+      margin-right: 84px;
     }
 
     img {
@@ -77,6 +77,16 @@
     font-size: 28pt;
     color: #4c4c4c;
     flex-shrink: 0;
+
+    &__seconds-indicator {
+      font-family: $stack-ui;
+      font-size: 22pt;
+    }
+
+    &__points {
+      padding-left: 12px;
+      font-size: 20pt;
+    }
   }
 
   &:not(:last-child)::after {
