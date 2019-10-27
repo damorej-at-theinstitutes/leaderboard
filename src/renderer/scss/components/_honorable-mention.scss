@@ -1,0 +1,61 @@
+.honorable-mention {
+  padding-top: 9px;
+  height: 100%;
+  padding-left: 26px;
+  padding-bottom: 4px;
+  padding-right: 400px;
+  align-items: center;
+  display: flex;
+
+  &__label {
+    padding-right: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__entry {
+    opacity: 1;
+    transition: opacity .3s ease;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    img {
+      display: inline-block;
+      max-height: 48px;
+      margin-right: 72px;
+    }
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &__name {
+      margin-right: 72px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__time {
+      font-family: $stack-digital;
+      font-weight: bold;
+      font-size: 18pt;
+      padding-top: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &__seconds-indicator {
+        font-family: $stack-ui;
+        font-size: 18pt;
+      }
+
+      &__points {
+        margin-left: 12px;
+        font-size: 13pt;
+      }
+    }
+  }
+}

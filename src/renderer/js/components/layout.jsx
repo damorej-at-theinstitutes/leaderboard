@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import LeaderboardEntryForm from './leaderboardEntryForm';
 import LeaderboardEntryList from './leaderboard/entryList';
+import HonorableMention from './honorableMention';
 
 const Layout = () => {
   return <div className="layout">
@@ -23,7 +24,7 @@ const Layout = () => {
     </div>
     <div className="layout__footer">
       <div className="layout__footer__content">
-        Honorable Mentions:
+        <HonorableMention />
       </div>
       <div className="layout__footer__squares"></div>
     </div>
