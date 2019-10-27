@@ -1,0 +1,47 @@
+.overlay {
+  position: fixed;
+  z-index: 2;
+  background-color: transparent;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: none;
+  transition: background-color .85s ease, opacity .35s ease;
+  pointer-events: none;
+  color: #ffffff;
+  opacity: 0;
+  padding: 36px;
+  font-family: $stack-ui;
+
+  &--visible {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, .8635);
+    backdrop-filter: blur(8px);
+    opacity: 1;
+  }
+}
+
+.overlay-button {
+    border: 3px solid #ffffff;
+    border-radius: 99px;
+    padding: 18px 64px;
+    font-family: $stack-ui;
+    font-size: 18pt;
+    cursor: pointer;
+    display: block;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 6px;
+
+  &--text {
+    border: none;
+    margin-bottom: 18px;
+  }
+
+  &--small {
+    padding: 9px 28px;
+    font-size: 13pt;
+  }
+}
