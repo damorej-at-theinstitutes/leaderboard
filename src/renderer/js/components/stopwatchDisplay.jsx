@@ -35,13 +35,21 @@ const StopwatchDisplay = (props) => {
     }
   }, [stopwatch, finished]);
 
+  React.useEffect(() => {
+    if (stopwatchFinished) {
+      let id = setTimeout(() => {
+        onClickFinish();
+      }, 5000);
+    }
+  }, [stopwatchFinished]);
+
   function updateCountdown(remaining) {
     setCountdownRemaining(remaining);
   }
 
   function finishCountdown(remaining) {
     let stopwatchObject = Stopwatch();
-    stopwatchObject.start(10, (elapsed) => {
+    stopwatchObject.start(1, (elapsed) => {
       setTime(elapsed);
     });
     setStopwatch(stopwatchObject);
@@ -100,9 +108,6 @@ const StopwatchDisplay = (props) => {
     if (!finished) {
       stopwatch.stop();
       setStopwatchFinished(true);
-      setTimeout(() => {
-        onClickFinish();
-      }, 5000);
     }
     setFinished(true);
   }
