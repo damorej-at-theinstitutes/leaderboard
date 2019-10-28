@@ -33,7 +33,7 @@ const StopwatchDisplay = (props) => {
     return () => {
       document.removeEventListener("keydown", onKeyDown);
     }
-  }, [stopwatch]);
+  }, [stopwatch, finished]);
 
   function updateCountdown(remaining) {
     setCountdownRemaining(remaining);
@@ -85,6 +85,9 @@ const StopwatchDisplay = (props) => {
   }
 
   function onClickCancel() {
+    if (finished) {
+      return;
+    }
     if (props.onCancel) {
       props.onCancel();
     }
