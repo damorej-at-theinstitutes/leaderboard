@@ -6,6 +6,8 @@ function createWindow() {
   let newWindow = new BrowserWindow({
     width: 1200,
     height: 900,
+    fullscreen: true,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
     },
